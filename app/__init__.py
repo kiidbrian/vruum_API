@@ -20,9 +20,11 @@ api = Api(api_v1, version='1.0', title='VRUUM API', description='A development A
 
 def create_app(config_name):
     app = Flask(__name__)
-    # api.init_app(app)
     CORS(app)
+    
     app.config.from_object(config[config_name])
+    app.config.SWAGGER_UI_DOC_EXPANSION = 'list'
+    app.config.SWAGGER_UI_JSONEDITOR = True
     config[config_name].init_app(app)
 
     login_manager.init_app(app)
@@ -31,7 +33,7 @@ def create_app(config_name):
 
     # Add namespaces
     ns = api.add_namespace(ns1)
-    
+
     # Register routes
     app.register_blueprint(api_v1)
 

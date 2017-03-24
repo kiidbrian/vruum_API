@@ -15,6 +15,7 @@ import requests
 
 @ns1.route('/')
 class User(Resource):
-    @ns1.doc('get_user')
+    @ns1.doc('list_users')
     def get(self):
+        '''List all users '''
         return {'hello': 'world'}
