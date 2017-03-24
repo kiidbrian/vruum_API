@@ -26,3 +26,4 @@ SQLAlchemy==1.1.5
 Werkzeug==0.11.15
 WTForms==2.1
 Requests==2.13.0
+Flask-cors

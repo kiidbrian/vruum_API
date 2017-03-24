@@ -1,7 +1,7 @@
-from app import db
+from app.__init__ import db
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from app import login_manager
+from app.__init__ import login_manager
 
 import datetime
 
